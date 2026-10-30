@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <!-- Filtro de Seguridad y Roles -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>Filtro.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Mapeo LoginControlador -->
+    <servlet>
+        <servlet-name>LoginControlador</servlet-name>
+        <servlet-class>Controlador.LoginControlador</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginControlador</servlet-name>
+        <url-pattern>/LoginControlador</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo AccesoControlador -->
+    <servlet>
+        <servlet-name>AccesoControlador</servlet-name>
+        <servlet-class>Controlador.AccesoControlador</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AccesoControlador</servlet-name>
+        <url-pattern>/AccesoControlador</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo CajaControlador -->
+    <servlet>
+        <servlet-name>CajaControlador</servlet-name>
+        <servlet-class>Controlador.CajaControlador</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CajaControlador</servlet-name>
+        <url-pattern>/CajaControlador</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo ClienteControlador -->
+    <servlet>
+        <servlet-name>ClienteControlador</servlet-name>
+        <servlet-class>Controlador.ClienteControlador</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClienteControlador</servlet-name>
+        <url-pattern>/ClienteControlador</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo UsuarioControlador -->
+    <servlet>
+        <servlet-name>UsuarioControlador</servlet-name>
+        <servlet-class>Controlador.UsuarioControlador</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsuarioControlador</servlet-name>
+        <url-pattern>/UsuarioControlador</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo HistorialCajaControlador -->
+    <servlet>
+        <servlet-name>HistorialCajaControlador</servlet-name>
+        <servlet-class>Controlador.HistorialCajaControlador</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HistorialCajaControlador</servlet-name>
+        <url-pattern>/HistorialCajaControlador</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo ExportarAtletasControlador -->
+    <servlet>
+        <servlet-name>ExportarAtletasControlador</servlet-name>
+        <servlet-class>Controlador.ExportarAtletasControlador</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExportarAtletasControlador</servlet-name>
+        <url-pattern>/ExportarAtletasControlador</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
